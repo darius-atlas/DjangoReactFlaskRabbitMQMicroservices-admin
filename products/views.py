@@ -9,7 +9,7 @@ class ProductViewSet(viewsets.ViewSet):
     def list(self, request):
         products = Product.objects.all()
         serializer = ProductSerializer(products, many=True)
-        return Responce(serializer.date)
+        return Response(serializer.date)
 
     def create(self, request):
         pass
