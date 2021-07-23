@@ -1,8 +1,14 @@
 from rest_framework import viewsets
+from rest_framework.responce import Responce
+from .models import Product
+form .serializsers import ProductSerializer
+
 
 class ProductViewSet(viewsets.ViewSet):
     def list(self, request):
-        pass
+        products = Product.objects.all()
+        serializser = ProductSerializer(products, many=True)
+        return Responce(serializser.date)
 
     def create(self, request):
         pass
